@@ -1,0 +1,9 @@
+Could use curl?
+
+    $ curl -R -o <name> <url>
+
+This will save to <name> and also ctime/mtime it to the server's remote time.
+
+    $ curl -z <name> <url>
+
+This will do the if-not-modified dance based on the mtime of <name>.
