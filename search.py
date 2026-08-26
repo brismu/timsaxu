@@ -4,7 +4,7 @@ q = sys.argv[1]
 full = q == "--full"
 if full: q = sys.argv[2]
 
-dicts = [json.load(open(f, "r")) for f in glob.iglob("jvs/*.json")]
+dicts = [json.load(open(f, "r")) for f in glob.iglob("dicts/*.json")]
 
 def printRecord(v, cmene):
     if "selma'o" in v: kls = f"({v["klesi"]}, {v["selma'o"]})"
