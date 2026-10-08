@@ -1,7 +1,9 @@
 timsaxu is a prototype distributed dictionary for Lojban. A timsaxu instance
 is a directory of JSON files. An update map is a JSON file mapping usernames
-to lists of URLs. Three scripts are included:
+to lists of URLs. Four scripts are included:
 
+* baseline-convert.py: convert baseline gismu.txt, cmavo.txt, and rafsi.txt to
+  a timsaxu instance
 * jvs-convert.py: convert jbovlaste XML to a timsaxu instance
 * search.py: search a timsaxu instance at the command line
 * update.py: use an update map to update a timsaxu instance
@@ -15,8 +17,9 @@ etc.
 Inspiration comes from RSS, Atom, and JSON Feed; and Nostr.
 
 The structure of individual JSON dictionaries can be intuited from
-jvs-convert.py or search.py, or by running update.py and examining the
-downloaded dictionaries, or by considering the following example:
+baseline-convert.py, jvs-convert.py, or search.py; or by running update.py and
+examining the downloaded dictionaries, or by considering the following
+example:
 
 {
     "cmene": "korvo",
