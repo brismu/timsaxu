@@ -19,11 +19,15 @@
         url = "https://www.lojban.org/publications/wordlists/rafsi.txt";
         sha256 = "sha256-MbkKhVHLPLn00MaHOGevGQbpIQw5i/SfIOXCGqAtDSQ=";
       };
+      oblique = pkgs.fetchurl {
+        url = "https://www.lojban.org/publications/wordlists/oblique_keywords.txt";
+        sha256 = "sha256-NVeGz9BJBjySUU+sLUF/xJZt93SdwX18+0m9kD+2oss=";
+      };
       baseline = pkgs.stdenv.mkDerivation {
         name = "baseline.json";
         buildInputs = [ pkgs.python3 ];
         buildCommand = ''
-          python3 ${./baseline-convert.py} ${gismu} ${cmavo} ${rafsi}
+          python3 ${./baseline-convert.py} ${gismu} ${cmavo} ${rafsi} ${oblique}
           mkdir -p $out
           mv baseline.json $out/
         '';
