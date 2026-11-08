@@ -1,10 +1,13 @@
-import json, os.path, shutil, subprocess
+import json, os.path, shutil, subprocess, sys
 
-with open("en.json", "r") as handle: d = json.load(handle)
+lang = sys.argv[1]
+
+updateMap = lang + ".json"
+with open(updateMap, "r") as handle: d = json.load(handle)
 
 for name, urls in d.items():
-    old = f"dicts/{name}.json"
-    new = f"dicts/{name}.json.new"
+    old = f"dicts/{lang}/{name}.json"
+    new = f"dicts/{lang}/{name}.json.new"
     args = ["curl", "-R", "-o", new]
     if os.path.exists(old): args.extend(["-z", old])
     for url in urls:
