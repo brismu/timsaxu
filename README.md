@@ -54,8 +54,8 @@ To start a new language, export the corresponding JVS XML. Check both boxes
 before exporting to ensure that all records are retrieved! Save it as
 something like "jbovlaste.xml". Then run:
 
-  $ mkdir jvs/
-  $ python jvs-convert.py jbovlaste.xml
+    $ mkdir jvs/
+    $ python jvs-convert.py jbovlaste.xml
 
 Now the folder "jvs" is a timsaxu instance. Copy it to the mirror location.
 This might take some time depending on your hosting provider.
@@ -63,26 +63,26 @@ This might take some time depending on your hosting provider.
 While waiting for that copy, prepare the update map. Determine the base URL
 where the instance will be mirrored, say `$BASE`, and then run:
 
-  $ python make-mirror.py jvs/ $BASE > $L.json
+    $ python make-mirror.py jvs/ $BASE > $L.json
 
 Finally, add the new language to the top of search.py.
 
 Now, it's time to test that everything works. First, test the mirror:
 
-  $ mkdir dicts/$L
-  $ python update.py $L
+    $ mkdir dicts/$L
+    $ python update.py $L
 
 Then, test that the new language is available in search:
 
-  $ LANG=$L python search.py mlatu
+    $ LANG=$L python search.py mlatu
 
 ### Adding new sources
 
-To add new sources for a particular language, edit the JSON file which
+To add new sources for a particular language, edit the update map which
 corresponds to that language to include URLs where those instances are
-located. Each instance is associated with an account either on JVS or GH; if
-you do not have a JVS account then you may use your GH account. The accounts
-are purely to provide a modicum of namespacing.
+located. Each instance's individual JSON dictionary is associated with an
+account either on JVS or GH; if you do not have a JVS account then you may use
+your GH account. The accounts are purely to provide a modicum of namespacing.
 
 ### Removing mirrors
 
