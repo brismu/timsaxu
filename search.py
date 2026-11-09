@@ -1,7 +1,7 @@
 import glob, json, os, sys
 
 # Add new languages here!
-langs = set(["en", "jbo"])
+langs = set(["en", "es", "jbo"])
 
 def guessLang():
     if "LANG" in os.environ:
